@@ -1,7 +1,7 @@
 {
   "name": "CSE7766",
   "keywords": "cse7766, power, sonoff-s31, sensor",
-  "description": "Arduino Library for CSE7766 (Used in Sonoff S31",
+  "description": "Arduino Library for CSE7766 (Used in Sonoff S31)",
   "repository":
   {
     "type": "git",
