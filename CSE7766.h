@@ -8,7 +8,7 @@
 #define CSE7766_h
 
 #include "Arduino.h"
-#include "debug.h"
+#include "debug_cse.h"
 #include <SoftwareSerial.h>
 
 #ifndef CSE7766_PIN
