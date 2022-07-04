@@ -130,8 +130,14 @@
 
       if (1 == _pin_rx) {
           Serial.begin(CSE7766_BAUDRATE);
-      } else {
-          _serial = new SoftwareSerial(_pin_rx, SW_SERIAL_UNUSED_PIN, _inverted, 32);
+      } 
+#ifdef ESP32      
+      else if (16== _pin_rx){
+          Serial2.begin(CSE7766_BAUDRATE);        
+      } 
+#endif
+      else {
+          _serial = new SoftwareSerial(_pin_rx, -1, _inverted);
           _serial->enableIntTx(false);
           _serial->begin(CSE7766_BAUDRATE);
       }
@@ -308,7 +314,13 @@
   bool CSE7766::_serial_available() {
       if (1 == _pin_rx) {
           return Serial.available();
-      } else {
+      } 
+#ifdef ESP32      
+      else if (16== _pin_rx){
+          return Serial2.available();       
+      } 
+#endif
+      else {
           return _serial->available();
       }
   }
@@ -316,7 +328,13 @@
   void CSE7766::_serial_flush() {
       if (1 == _pin_rx) {
           return Serial.flush();
-      } else {
+      } 
+#ifdef ESP32      
+      else if (16== _pin_rx){
+          return Serial2.flush();       
+      } 
+#endif
+      else {
           return _serial->flush();
       }
   }
@@ -324,8 +342,13 @@
   uint8_t CSE7766::_serial_read() {
       if (1 == _pin_rx) {
           return Serial.read();
-      } else {
+      } 
+#ifdef ESP32      
+      else if (16== _pin_rx){
+          return Serial2.read();       
+      } 
+#endif
+      else {
           return _serial->read();
       }
   }
-

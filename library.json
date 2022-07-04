@@ -1,0 +1,25 @@
+{
+  "name": "CSE7766",
+  "keywords": "cse7766, power, sonoff-s31, sensor",
+  "description": "Arduino Library for CSE7766 (Used in Sonoff S31)",
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/ingeniuske/CSE7766.git"
+  },
+  "authors":
+  [
+    {
+      "name": "Ingeniuske",
+      "email": "ingeniuske@gmail.com",
+      "url": "https://github.com/ingeniuske/CSE7766",
+      "maintainer": true
+    }
+  ],
+  "dependencies":
+  {
+  },
+  "version": "1.0.0",
+  "frameworks": "arduino",
+  "platforms": "*"
+}
